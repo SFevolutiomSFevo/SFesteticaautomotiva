@@ -56,6 +56,9 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             position: relative;
+            display: flex;
+            gap: 120px; /* espaço entre a imagem e o texto */
+            align-items: center;
         }
         
         .logo::after {
@@ -107,7 +110,26 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            background-image: url('img/Imagem\ do\ WhatsApp\ de\ 2025-05-20\ à\(s\)\ 11.23.58_92344304.jpg'); /* caminho da imagem */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgb(255, 255, 255); /* para garantir que o texto fique visível */
+            padding: 100px 0; /* ajuste conforme necessário */
+            z-index: 1;
         }
+        .hero .container,
+        .hero-content {
+          position: relative;
+         z-index: 2;
+        }
+        .hero::before {
+         content: "";
+         position: absolute;
+         inset: 0;
+         background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem para contraste */
+         z-index: 0;
+}
         
         .hero-content {
             max-width: 600px;
@@ -888,24 +910,33 @@
   position: relative;
   z-index: 10;
 }
+.logo-mao {
+    height: 80px; /* ajuste o tamanho conforme necessário */
+    width: 80px;
+    
+    border-radius: 50px;
+}
 </style>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">SF Estética Automotiva</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#qr">Monitoramento</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <span>SF Estética Automotiva</span>
+                <img src="img/mao.jpg" alt="Logo SF" class="logo-mao">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#qr">Monitoramento</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -917,12 +948,7 @@
                 <a href="#qr" class="btn btn-secondary scroll-link">Monitoramento</a>
             </div>
         </div>
-        <div class="hero-bg"></div>
-        <div class="hero-circles">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-        </div>
+        
     </section>
 
     <!-- Services Section -->
